@@ -1,19 +1,12 @@
-# Challange Chapter 7 - Tim 1
+# Final Project - Team 3
 
-1. Haikal Hidayatullah
-2. Rayhan Yuda Lesmana
+1. Bhadrika Wira Surya Cendekia
+2. Salma Eka Yudanti
 3. Bryan Fajar Azhari
-4. Indira Virliana
-5. Dandy Gilang Saputra
-
-### Jobdesk
-
-1. Haikal Hidayatullah : Search car, login
-2. Rayhan Yuda Lesmana : Register
-3. Bryan Fajar Azhari : Landing Page, WhoAmI
-4. Indira Virliana : OAuth Google
-5. Dandy Gilang Saputra : -
+4. Rizki Adji Pangestu
+5. Rayisa Yudha Pratama
+6. Indira Virliana
 
 ## ERD
 
-![](public/erd.png)
+![](public/ERD Final Project.png)
