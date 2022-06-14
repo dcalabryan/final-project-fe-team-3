@@ -1,0 +1,114 @@
+body {
+  font-family: Helvetica;
+}
+
+.bg-nav {
+  background: #f1f3ff;
+}
+
+.main-section-right {
+  padding-top: 70px;
+}
+
+.main-section-left {
+  padding-top: 155px;
+  text-align: justify;
+}
+
+.search {
+  position: relative;
+  font-size: 12px;
+  margin-top: -60px;
+  font-style: normal;
+  font-weight: 300;
+  line-height: 18px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.15);
+  width: 90%;
+  border-radius: 8px;
+  background-color: white;
+  z-index: 1;
+}
+
+.passenger {
+  background: url(../img/fi_users.png) no-repeat 95%;
+  background-size: 18px;
+}
+
+.footer {
+  margin: 100px 0 100px 0;
+}
+
+.footer a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  display: block;
+}
+
+.cars {
+  position: relative;
+  font-size: 14px;
+  margin-top: 40px;
+  font-style: normal;
+  font-weight: 300;
+  width: 90%;
+  background-color: white;
+  z-index: 1;
+}
+
+.img-car {
+  object-fit: cover;
+  height: 250px;
+  width: 100%;
+}
+
+.text {
+  text-align: justify;
+  height: 120px;
+}
+
+.text-card {
+  height: 120px;
+}
+
+.card-body {
+  width: 100%;
+}
+
+.btn-card {
+  align-items: flex-end;
+}
+
+@media screen and (max-width: 900px) {
+  .main-section-left {
+    padding-top: 80px;
+  }
+  .footer {
+    margin: 80px 0 100px 0;
+    text-align: center;
+  }
+  .search {
+    width: 100%;
+    margin-top: 20px;
+  }
+}
+@media screen and (max-width: 450px) {
+  .main-section-left {
+    padding-top: 100px;
+  }
+  .main-section-left h3 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .footer {
+    margin: 50px 0 100px 0;
+    text-align: center;
+  }
+  .text-card {
+    height: 150px;
+  }
+  .text {
+    text-align: justify;
+    height: 150px;
+  }
+}
