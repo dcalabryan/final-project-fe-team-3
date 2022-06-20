@@ -1,4 +1,8 @@
 import logo from './logo.svg';
+import Login from "./pages/Login";
+import Register from "./pages/Register";
+
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import './App.css';
 
 function App() {
@@ -18,6 +22,13 @@ function App() {
           Learn React
         </a>
       </header>
+
+      <Router>
+        <Routes>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+        </Routes>
+      </Router>
     </div>
   );
 }
