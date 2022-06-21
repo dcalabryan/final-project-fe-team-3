@@ -1,0 +1,12 @@
+.login-form {
+  margin: 0;
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-20%);
+  transform: translateY(-80%);
+  text-align: left;
+}
+
+.text-register {
+  text-align: center;
+}
