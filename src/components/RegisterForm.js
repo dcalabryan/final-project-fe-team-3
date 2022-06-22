@@ -15,7 +15,7 @@ function RegisterForm() {
         </Form.Group>
 
         <Form.Group className="mb-3 mx-5" controlId="formBasicEmail">
-          <Form.Label>Nama</Form.Label>
+          <Form.Label>Email</Form.Label>
           <Form.Control type="email" placeholder="Contoh: johmdee@gmail.com" />
         </Form.Group>
 
