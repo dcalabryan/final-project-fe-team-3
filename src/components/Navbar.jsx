@@ -1,122 +1,130 @@
 import React, { useEffect } from "react";
-import { Nav, Button, Navbar, Container } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
+import { Container, Navbar, Nav, Button, Offcanvas, Stack, Dropdown, InputGroup, Form } from "react-bootstrap";
 import { logout, whoami } from "../redux/actions/authActions";
-import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap-icons/font/bootstrap-icons.css";
+import Brand from "../img/Brand.png";
+import Jam from "../img/jam.jpg";
+import "../css/homepage.css";
 
-function NavBar(props) {
+const NavbarComponent = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate();
   const { isAuthenticated, user } = useSelector((state) => state.auth);
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      dispatch(whoami());
+    }
+  }, [dispatch, isAuthenticated]);
 
   const handleLogout = () => {
     dispatch(logout());
-    return navigate("/");
   };
-  const linkService = () => {
-    if (isAuthenticated) {
+
+  setTimeout(() => {
+    if (localStorage.getItem("token")) {
       dispatch(whoami());
-      return navigate("/#ourservice");
     }
-    return navigate("/#ourservice");
-  };
-  const linkWhyus = () => {
-    if (isAuthenticated) {
-      dispatch(whoami());
-      return navigate("/#whyus");
-    }
-    return navigate("/#whyus");
-  };
-  const linkTestimonial = () => {
-    if (isAuthenticated) {
-      dispatch(whoami());
-      return navigate("/#testimonial");
-    }
-    return navigate("/#testimonial");
-  };
-  const linkFaq = () => {
-    if (isAuthenticated) {
-      dispatch(whoami());
-      return navigate("/#faq");
-    }
-    return navigate("/#faq");
-  };
-  const linkHome = () => {
-    if (isAuthenticated) {
-      dispatch(whoami());
-      return navigate("/");
-    }
-    return navigate("/#faq");
-  };
-  const alertLogout = async () => {
-    handleLogout();
-  };
-  const handleRegis = () => {
-    return navigate("/register");
-  };
+  }, 60000);
 
   return (
-    <>
-      <Navbar
-        collapseOnSelect
-        expand="lg"
-        className="bg-nav fw-bold"
-        fixed="top"
-      >
-        <Container>
-          <Navbar.Brand href="#" onClick={linkHome}>
-            Binar Car Rental
-          </Navbar.Brand>
-          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="ms-auto">
-              <Nav.Link
-                href="/#ourservice"
-                onClick={linkService}
-                className="mx-3"
-              >
-                Our Service
-              </Nav.Link>
-              <Nav.Link href="/#whyus" onClick={linkWhyus} className="mx-3">
-                Why Us
-              </Nav.Link>
-              <Nav.Link
-                href="/#testimonial"
-                onClick={linkTestimonial}
-                className="mx-3"
-              >
-                Testimonial
-              </Nav.Link>
-              <Nav.Link href="/#faq" onClick={linkFaq} className="mx-3">
-                FAQ
-              </Nav.Link>
-              {!window.localStorage.getItem("token") ? (
-                <Button
-                  variant="success"
-                  className="mx-3"
-                  onClick={handleRegis}
-                >
-                  Register
-                </Button>
-              ) : (
-                <>
-                  <Nav.Link className="mx-3">User {user.name}</Nav.Link>
-                  <Button
-                    variant="danger"
-                    className="mx-3"
-                    onClick={alertLogout}
-                  >
-                    Logout
-                  </Button>
-                </>
-              )}
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-    </>
-  );
-}
+    <div className="navbar-component py-1">
+      {["md"].map((expand) => (
+        <Navbar key={expand} expand={expand} className="py-1">
+          <Container>
+            <Navbar.Brand href="/" className="bg-primary-darkblue px-5 text-white">
+              <img src={Brand} alt="" />
+            </Navbar.Brand>
+            <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
+            <Navbar.Offcanvas id={`offcanvasNavbar-expand-${expand}`} aria-labelledby={`offcanvasNavbarLabel-expand-${expand}`} placement="end">
+              <Offcanvas.Header closeButton>
+                <Offcanvas.Title id={`offcanvasNavbarLabel-expand-${expand}`}>Second Hand</Offcanvas.Title>
+              </Offcanvas.Header>
+              <Offcanvas.Body>
+                <Nav className="justify-content-end flex-grow-1 pe-3 align-items-center">
+                  {user ? (
+                    <>
+                      <Nav.Link href="/login" className="fw-bold">
+                        <Button className="bg-button border-0">
+                          <i class="bi bi-box-arrow-in-right me-1" /> Masuk
+                        </Button>
+                      </Nav.Link>
+                    </>
+                  ) : (
+                    <>
+                      {/* Search Box */}
+                      <div className="search-box me-auto">
+                        <InputGroup>
+                          <Form.Control placeholder="Cari di sini ..." className="search-box" />
+                          <Button variant="light" id="button-addon2" className="search-box">
+                            <i class="bi bi-search"></i>
+                          </Button>
+                        </InputGroup>
+                      </div>
 
-export default NavBar;
+                      {/* Menu */}
+                      <Dropdown>
+                        <Dropdown.Toggle id="dropdown-basic" className="navbar-icon" href="/daftar-jual">
+                          <i class="bi bi-list-ul fs-2"></i>
+                        </Dropdown.Toggle>
+                      </Dropdown>
+                      {/* Notification */}
+                      <Dropdown>
+                        <Dropdown.Toggle id="dropdown-basic" className="navbar-icon">
+                          <i class="bi bi-bell fs-3" style={{ color: "#000000" }}></i>
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                          <Dropdown.Item href="/transaksi">
+                            <Stack direction="horizontal" gap={3}>
+                              <div>
+                                <p className="my-auto" style={{ fontSize: "10px", color: "#BABABA" }}>
+                                  Penawaran Produk
+                                </p>
+                                <h5 className="my-auto" style={{ fontSize: "12px", lineHeight: "22px" }}>
+                                  Jam Tangan Casio
+                                </h5>
+                                <h5 className="my-auto" style={{ fontSize: "12px", lineHeight: "22px" }}>
+                                  Rp. 250.000
+                                </h5>
+                                <h5 className="my-auto" style={{ fontSize: "12px", lineHeight: "22px" }}>
+                                  Ditawar Rp.200.000
+                                </h5>
+                              </div>
+                              <p className="align-self-start ms-auto" style={{ fontSize: "12px", color: "#BABABA" }}>
+                                20 Apr, 14:04
+                              </p>
+                            </Stack>
+                          </Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown>
+                      {/* Profile */}
+                      <Dropdown>
+                        <Dropdown.Toggle id="dropdown-basic" className="navbar-icon">
+                          <i class="bi bi-person fs-2"></i>
+                        </Dropdown.Toggle>
+                        <Dropdown.Menu>
+                          <Dropdown.Item href="/transaksi">
+                            <span class="bi bi-gear me-2" aria-hidden="true"></span>Edit Profile
+                          </Dropdown.Item>
+                          <Dropdown.Item href="/transaksi">
+                            <span class="bi bi-cart2 me-2" aria-hidden="true"></span>Wishlist
+                          </Dropdown.Item>
+                          <Dropdown.Item href="/transaksi">
+                            <span class="bi bi-clock-history me-2" aria-hidden="true"></span>History Transaksi
+                          </Dropdown.Item>
+                        </Dropdown.Menu>
+                      </Dropdown>
+                    </>
+                  )}
+                </Nav>
+              </Offcanvas.Body>
+            </Navbar.Offcanvas>
+          </Container>
+        </Navbar>
+      ))}
+    </div>
+  );
+};
+
+export default NavbarComponent;

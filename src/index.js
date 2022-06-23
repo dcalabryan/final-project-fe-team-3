@@ -6,7 +6,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 
 import "./index.css";
 
-import SearchCar from "./pages/SearchCar";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Protected from "./components/Protected";
@@ -25,14 +24,6 @@ root.render(
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route
-          path="/cars"
-          element={
-            <Protected>
-              <SearchCar />
-            </Protected>
-          }
-        />
 
         <Route
           path="/login"

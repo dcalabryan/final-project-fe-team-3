@@ -1,0 +1,125 @@
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: black;
+}
+
+/* CSS Chapter 4 */
+.App {
+  font-family: Helvetica !important;
+  scroll-behavior: smooth;
+}
+h2 {
+  font-size: 24px !important;
+  font-weight: bold !important;
+}
+/* .box {
+  width: 400px;
+  height: 10px;
+} */
+.search-box {
+  background: #eeeeee !important;
+  border-radius: 16px;
+  height: 48px;
+  border: 1px;
+  color: #000000;
+}
+.bg-aliceblue {
+  background-color: #f1f3ff;
+  color: #000000 !important;
+}
+.bg-button {
+  background-color: #7126b5 !important;
+  border-radius: 12px;
+}
+.card {
+  font-weight: 300;
+  font-size: 15px;
+  color: #b0b0b0;
+  margin-top: 10px;
+  margin-bottom: 2px;
+}
+.bg-button-edit {
+  background-color: #f1f1f1 !important;
+  border-radius: 12px;
+  border-color: #7126b5 !important;
+  color: #000000 !important;
+}
+.bg-button-footer {
+  background-color: #7126b5 !important;
+  border-radius: 12px;
+  margin-left: 40rem;
+  width: 80px;
+}
+.bg-primary-darkpurple {
+  background-color: #4b1979;
+  height: 28px;
+}
+.btn-filter-size {
+  color: #000000 !important;
+  border-color: #f1f3ff;
+}
+.btn-filter-size:hover {
+  color: #000000;
+  border-color: #d56dba;
+  background-color: #cfd4ed;
+}
+.btn-primary {
+  background-color: #e2d4f0;
+  color: #000000;
+  border-color: #7126b5;
+}
+.our-service-checklist {
+  width: 40px;
+  height: 40px;
+}
+.why-us-icon {
+  width: 32px;
+  height: 32px;
+}
+.testimonial-img {
+  width: 80px;
+  height: 80px;
+}
+
+.footer-link {
+  text-decoration: none;
+  color: black !important;
+  font-weight: normal;
+  font-size: 14px;
+}
+.footer-social {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+.navbar-icon {
+  content: none;
+  width: 65px;
+  margin-left: 5px;
+  background-color: white;
+  border: 0px;
+  color: black !important;
+  box-shadow: 0px !important;
+}
+
+.navbar-icon:hover {
+  background-color: white;
+  color: black !important;
+  border: 0px;
+  box-shadow: 0px !important;
+}
+
+.navbar-icon:after {
+  background-color: white !important;
+  color: black !important;
+  border: 0px !important;
+  box-shadow: 0px !important;
+}
+/* END CSS Chapter 4 */
