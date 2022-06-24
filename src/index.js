@@ -12,6 +12,8 @@ import Protected from "./components/Protected";
 import ProtectedLogin from "./components/ProtectedLogin";
 import Missing from "./pages/404";
 import Home from "./pages/Home";
+import InfoProduct from "./pages/InfoProduct";
+import PageProduct from "./pages/ProductPage";
 
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
@@ -45,6 +47,9 @@ root.render(
         />
 
         <Route path="*" element={<Missing />} />
+
+        <Route path="/infoproduct" element={<InfoProduct />} />
+        <Route path="/productpage" element={<PageProduct />} />
       </Routes>
     </BrowserRouter>
   </Provider>
