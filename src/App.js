@@ -1,9 +1,9 @@
-import logo from './logo.svg';
+import logo from "./logo.svg";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
-import './App.css';
+import "./App.css";
 
 function App() {
   return (

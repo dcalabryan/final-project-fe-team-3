@@ -14,6 +14,7 @@ import Missing from "./pages/404";
 import Home from "./pages/Home";
 import InfoProduct from "./pages/InfoProduct";
 import PageProduct from "./pages/ProductPage";
+import InfoProfile from "./pages/InfoProfile";
 
 import reportWebVitals from "./reportWebVitals";
 import { Provider } from "react-redux";
@@ -50,6 +51,14 @@ root.render(
 
         <Route path="/infoproduct" element={<InfoProduct />} />
         <Route path="/productpage" element={<PageProduct />} />
+        <Route
+          path="/infoprofile"
+          element={
+            <Protected>
+              <InfoProfile />
+            </Protected>
+          }
+        />
       </Routes>
     </BrowserRouter>
   </Provider>
