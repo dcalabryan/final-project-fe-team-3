@@ -1,0 +1,36 @@
+.form-login {
+  margin-top: 150px;
+  margin-bottom: 100px;
+}
+.login-form {
+  margin: 0;
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-20%);
+  transform: translateY(-80%);
+  text-align: left;
+}
+
+.text-register {
+  text-align: center;
+}
+.img-card {
+  background: linear-gradient(360deg, #a06ece 50%, rgba(160, 110, 206, 0) 100%);
+  opacity: 0.5;
+}
+.login-form {
+  margin: 0;
+  position: relative;
+  top: 50%;
+  -ms-transform: translateY(-20%);
+  transform: translateY(-80%);
+  text-align: left;
+}
+
+.btn-login {
+  width: 700px;
+}
+
+.text-register {
+  text-align: center;
+}
